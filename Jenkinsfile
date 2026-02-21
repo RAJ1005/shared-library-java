@@ -14,7 +14,9 @@ pipeline {
             steps {
                 mavenBuild()
             }
-        }
+            steps {
+                mavenBuild1.compile()
+            }
     }
 
     post {
