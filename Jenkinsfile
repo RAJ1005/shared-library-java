@@ -8,27 +8,38 @@ pipeline {
         maven 'maven399'
     }
 
-    stages {
+    stages 
+    {
 
-        stage('Build') {
-            steps {
+        stage('Build1') 
+        {
+            steps 
+            {
                 mavenBuild()
             }
-            steps {
+        }
+        stage('Build2') 
+        {
+            steps 
+            {
                 mavenBuild1.compile()
             }
+        }
     }
-
-    post {
-
-        success {
-            script {
+    post 
+    {
+        success 
+        {
+            script 
+            {
                 emailNotification.successEmail()
             }
         }
 
-        failure {
-            script {
+        failure 
+        {
+            script 
+            {
                 emailNotification.failureEmail()
             }
         }
